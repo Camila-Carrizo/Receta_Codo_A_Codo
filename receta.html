@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ñoquis con Salsa</title>
+    <link rel="stylesheet" href="CSS/receta.css">
+    <link rel="icon" type="image/png" href="img/pestaña.png">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="receta.html"><img src="img/logo.png" alt="Logo ñoquis"></a>
+            <div id="enlaces">
+                <a href="#lectura">~ Receta ~ </a>
+                <a href="#audio">~ Audio-Receta ~ </a>
+                <a href="#video">~ Video ~ </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+        <h1>~ Ñoquis de papa con salsa de tomate ~</h1>
+
+        <h2>~ Seguí la receta paso a paso ~</h2>
+        
+        <section id="lectura">
+            <div id="recetaEscrita">
+                <article id="tablaIngredientes">
+
+                    <h3>Ingredientes</h3>
+
+                    <table>
+                       <tr>
+                        <th>Ingrediente</th>
+                        <th>Cantidad</th>
+                       </tr>
+                       <tr>
+                        <td>Papas</td>
+                        <td>500 gr</td>
+                       </tr>
+                       <tr>
+                        <td>Harina de Hornear</td>
+                        <td>200 gr</td>
+                       </tr>
+                       <tr>
+                        <td>Huevo</td>
+                        <td>1</td>
+                       </tr>
+                       <tr>
+                        <td>Tomate Natural</td>
+                        <td>500  gr</td>
+                       </tr>
+                       <tr>
+                        <td>Dientes de Ajo</td>
+                        <td>2</td>
+                       </tr>
+                       <tr>
+                        <td>Albahaca Fresca</td>
+                        <td>1 manojo</td>
+                       </tr>
+                       <tr>
+                        <td>Sal</td>
+                        <td>1 cucharadita</td>
+                       </tr>
+                       <tr>
+                        <td>Azúcar</td>
+                        <td>1 cuchara</td>
+                       </tr>
+                       <tr>
+                        <td>Aceite de oliva</td>
+                        <td></td>
+                       </tr>
+                    </table>
+                    <button id="verReceta">
+                        Ver Receta
+                    </button>
+                    
+                </article>
+                
+                <article id='receta' style="display: none;">
+
+                    <p id="paso">
+
+                    </p>
+                    
+                    <article id="btnPasos">
+                        <button id="verIngredientes">Ver Ingredientes</button>
+                        <button id="stepBack" style="display:none">Paso Anterior</button>
+                        <button id="stepNext">Paso Siguiente</button>
+                    </article>
+
+                </article>
+
+                <img src="./img/platoNioquis.png" alt="Plato de ñoquis">
+            </div>
+        </section>
+
+        <h2>~ Escuchá el paso a paso de la receta ~</h2>
+
+        <section id="audio">
+            <div>
+                <img src="./img/manosNioquis.png" alt="Manos con ñoquis">
+                <audio src="audio/recetaNioquis.mp3" controls preload="none">
+                            No se pudo reproducir el audio
+                </audio>               
+            </div>
+        </section>
+
+        <h2>~ Mirá el paso a paso de la receta ~</h2>
+
+        <section id="video">
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ceYcXdEUxPA?si=KqFQPKt_6oOzFdw9"
+                 title="YouTube video player" 
+                 frameborder="0"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 allowfullscreen>
+                </iframe>
+                <img src="./img/nioquis.png" alt="Plato con ñoquis">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="receta.html"><img src="img/logo.png" alt=""></a>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

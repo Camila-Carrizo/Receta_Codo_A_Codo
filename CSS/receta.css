@@ -1,0 +1,299 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box
+}
+
+
+body {
+    margin: auto;
+    background-image: url(../img/salsasFondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav{
+    height: 67px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+    background-color: rgba(184, 182, 178, 0.3);
+    font-size: 15px;
+}
+
+    nav div a{
+        text-decoration: none;
+        padding: 13px;
+        margin: 9px;
+        color:  white;
+        font-style: italic;
+    }
+
+    a:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    #enlaces {
+        margin: auto auto auto 400px ;
+    }
+
+    nav img{
+        width: 80px;
+        margin-left: 15px;
+    }
+
+
+
+h1{
+    text-align: center;
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    margin-top: 45px;
+    font-style: italic;
+}
+
+h2{
+    text-align: center;
+    font-size: 27px;
+    color: rgb(255, 255, 255);
+    margin-top: 40px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+section{
+    height: 472px;
+    margin: 33px 0 33px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+    section div {
+        width: 1140px;
+        height: 465px;
+        border-radius: 235px;
+        background-color: rgba(239, 160, 70, 0.5);
+        display: flex;
+    }
+
+#lectura div {
+    justify-content: end;
+}
+
+    #lectura button{
+        width: 90px;
+        height: 45px;
+        border-radius: 22px;
+        font-style: italic;
+        border: none;
+        font-weight: bold;
+        color: rgb(238, 128, 2);
+        box-shadow:-2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease, color 0.3s ease
+    }
+
+    #lectura button:hover{
+        background-color: rgba(236, 172, 99, 0.5);
+        cursor: pointer;
+        color: white;
+    }
+    
+    #lectura button:active{
+        background-color:  rgba(238, 135, 16, 0.5);
+    }
+
+    #verReceta{
+        margin: 25px 0 0 80px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 550px;
+        height: 100px;
+        font-style: italic;
+        box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.5)
+        
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 2px;
+        font-weight: bolder;
+    }
+
+    #tablaIngredientes, #receta{
+        width: 550px;
+        margin: 50px auto auto 90px;
+        text-align: center;
+        padding: 4px;
+        animation: none;
+    }
+    
+    #receta{
+        position: relative;
+        margin-top: 60px;
+    }
+        #btnPasos{
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            top: 250px;
+            left: 120px
+        }
+        
+            #btnPasos button{
+                margin: 20px;
+            }
+        
+        #paso{
+            color: white;
+            filter: drop-shadow(12px 5px 10px rgba(0, 0, 0, 0.9));
+            text-align: justify;
+            font-size:larger
+        }
+        
+            p strong{
+                text-decoration: underline;
+                display: block;
+                text-align: center;
+            }
+            
+            article ul{
+                color: white;
+                text-align: justify;
+                margin-left: 110px;
+            }
+
+
+h3{
+    margin: 25px 0 15px 80px;    
+}
+
+
+@keyframes desaparecerTabla {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes aparecerReceta {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecerTabla {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes desaparecerReceta {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+
+#tablaIngredientes.desaparecerTabla{
+    animation: desaparecerTabla 1s forwards
+}
+
+
+#tablaIngredientes.aparecerTabla{
+    animation: aparecerTabla 1s forwards
+    
+}
+
+#receta.desaparecerReceta{
+    animation: desaparecerReceta 1s forwards
+
+}
+
+#receta.aparecerReceta{
+    animation: aparecerReceta 1s forwards
+}
+
+
+
+#audio div{
+    justify-content: baseline
+}
+
+    audio {
+        width: 450px;
+        filter: drop-shadow(-10px -5px 10px rgba(0, 0, 0, 0.616));
+        margin: auto 180px auto auto;
+        
+    }
+
+    #audio img{
+        filter: drop-shadow(12px 5px 10px rgba(0, 0, 0, 0.842));
+
+    }
+
+    audio::-webkit-media-controls-panel {
+        background-color: rgb(233, 153, 61);
+    }
+
+#video div{
+    justify-content: end
+}
+
+
+    #video img, #lectura img{
+        filter: drop-shadow(-12px 5px 10px rgba(0, 0, 0, 0.842));
+    }
+
+    iframe{
+        margin: auto;
+        margin-right: 35px;
+        box-shadow: -2px 10px 5px 2px rgba(0, 0, 0, 0.5);
+        border-radius: 22px;
+    }
+
+
+footer{
+    height: 67px;
+    width: 100%;
+    background-color: #181717ab;
+    font-size: 15px;
+    border-top: 2px solid rgb(66, 66, 66);
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+    footer img{
+        width: 93px;
+        opacity: 0.7;       
+    }
+
+    footer img:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+
