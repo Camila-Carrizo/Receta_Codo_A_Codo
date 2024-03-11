@@ -1,4 +1,4 @@
-//Elementos HTML
+//ELEMENTOS HTML
 
 tablaIngredientes = document.getElementById('tablaIngredientes')
 divReceta = document.getElementById('receta')
@@ -8,9 +8,11 @@ paso = document.getElementById('paso')
 btnNext = document.getElementById('stepNext')
 btnBack = document.getElementById('stepBack')
 
-//Declaración de variables
+//DECLARACIÓN DE VARIABLES
 
-let pasoActual = 0
+let pasoActual = 0 // Variable que almacena el índice del paso actual
+
+// Arreglo que contiene los pasos de la receta
 
 var pasosReceta = [
     "<strong>Paso 1:</strong><br><br> Precalentar el horno a 200°C y hornear 6 papas hasta que estén blandas (aproximadamente 1 hora).", 
@@ -33,82 +35,101 @@ var pasosReceta = [
     
     "<strong>Paso 10:</strong><br><br> Servir los ñoquis con la salsa de tomate preparada y agregar queso rallado al gusto."
 
-]
+] 
 
 
 
 
 //FUNCIONES 
 
-function actualizarPaso(){
-    paso.innerHTML = pasosReceta[pasoActual]
+// Función para actualizar el paso actual mostrado en pantalla
 
+function actualizarPaso(){
+    paso.innerHTML = pasosReceta[pasoActual] // Actualiza el contenido del elemento paso con el paso actual
+
+    // Oculta o muestra los botones de siguiente y anterior según el paso actual
     switch (pasoActual) {
         case 0:
-          btnBack.style.display = 'none'
+          btnBack.style.display = 'none'  // Oculta el botón de retroceso en el primer paso
           break;
         case pasosReceta.length-1:
-            btnNext.style.display = 'none'
+            btnNext.style.display = 'none' // Oculta el botón de avance en el último paso
             break;
-        default:
-            btnBack.style.display= 'block'
-            btnNext.style.display = 'block'
+        default: 
+            btnBack.style.display= 'block' // Muestra el botón de retroceso en pasos intermedios
+            btnNext.style.display = 'block' // Muestra el botón de avance en pasos intermedios
             break;
       }
 }
 
+// Función para pasar al siguiente paso de la receta
+
 function pasoSiguiente(){
     if(pasoActual < pasosReceta.length -1){
         btnNext.style.display = 'block'
-        pasoActual++
-        actualizarPaso()
+        pasoActual++ // Incrementa el índice del paso actual
+        actualizarPaso() // Actualiza el paso mostrado en pantalla 
 }}
 
 function pasoAnterior(){
     if(pasoActual > 0){
         btnBack.style.display = 'block'
-        pasoActual--
-        actualizarPaso()
+        pasoActual-- // Función para retroceder al paso anterior de la receta
+        actualizarPaso() // Actualiza el paso mostrado en pantalla 
     }}
 
 
-// Eventos
+// EVENTOS
+
+// Evento para mostrar la receta y ocultar los ingredientes al hacer clic en el botón "Ver Receta"
 
 btnVerReceta.addEventListener('click', () => {
-    tablaIngredientes.classList = []; 
-    divReceta.classList = []; 
+    tablaIngredientes.classList = []; // Elimina todas las clases CSS aplicadas al elemento de la tabla de ingredientes
+    divReceta.classList = []; // Elimina todas las clases CSS aplicadas al elemento de la receta
 
-    tablaIngredientes.classList.add('desaparecerTabla'); 
+    tablaIngredientes.classList.add('desaparecerTabla');  // Agrega la clase CSS 'desaparecerTabla' para iniciar la animación de desaparición de la tabla de ingredientes
+
 
     setTimeout(() => {
-        divReceta.classList.add('aparecerReceta'); 
-        divReceta.style.display = 'block'; 
+        divReceta.classList.add('aparecerReceta'); // Agrega la clase CSS 'aparecerReceta' para iniciar la animación de aparición de la receta
+        divReceta.style.display = 'block'; // Muestra el elemento de la receta
     }, 500);
 
+    // Evento de transición para detectar cuando finaliza la animación de desaparición de la tabla de ingredientes
     tablaIngredientes.addEventListener('transitionend', () => {
-        tablaIngredientes.style.display = 'none'}, { once: true });
+        tablaIngredientes.style.display = 'none'}, { once: true }); //Oculta completamente el elemento de la tabla de ingredientes después de la animación
 });
 
+
+// Evento para mostrar los ingredientes y desaparecer la receta al hacer clic en el botón "Ver Ingredientes"
+
 btnVerIngredientes.addEventListener('click', () => {
-    divReceta.classList = []; 
-    tablaIngredientes.classList = []; 
+    divReceta.classList = []; // Elimina todas las clases CSS aplicadas al elemento de la receta
+    tablaIngredientes.classList = []; // Elimina todas las clases CSS aplicadas al elemento de la tabla de ingredientes
 
     divReceta.classList.add('desaparecerReceta'); 
     setTimeout(() => {
-        tablaIngredientes.style.display = 'block'; 
-        tablaIngredientes.classList.add('aparecerTabla'); 
+        tablaIngredientes.style.display = 'block'; // Muestra el elemento de la tabla de ingredientes
+        tablaIngredientes.classList.add('aparecerTabla'); // Agrega la clase CSS 'aparecerTabla' para iniciar la animación de aparición de la tabla de ingredientes
     }, 500);
 
+    // Evento de transición para detectar cuando finaliza la animación de desaparición de la receta
     divReceta.addEventListener('transitionend', () => {
-        divReceta.style.display = 'none'}, { once: true });
+        divReceta.style.display = 'none'}, { once: true }); //Oculta completamente el elemento de la receta después de la animación
 });
 
+// Evento para retroceder al paso anterior al hacer clic en el botón de retroceso
+
 btnBack.addEventListener('click', ()=>{
-    pasoAnterior()
+    pasoAnterior()  //Llama a la función para retroceder al paso anterior
 })
 
+// Evento para avanzar al paso siguiente al hacer clic en el botón de avance
+
 btnNext.addEventListener('click', ()=>{
-    pasoSiguiente()
+    pasoSiguiente() // Llama a la función para avancar al paso siguiente
 })
+
+//Llamada a la funcion para actualizar el paso en pantalla
 
 actualizarPaso();
